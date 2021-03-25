@@ -4,20 +4,21 @@ import { Link, NavLink, BrowserRouter as Router } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <Router>
-        <NavLink className="navbar-brand" to="/">
-          Home
-        </NavLink>
-        <NavLink
-          className="navbar-brand"
-          to="/post"
-        >
-          Post Event
-        </NavLink>
-        <NavLink className="navbar-brand" to="/events">
-          Events
-        </NavLink>
-      </Router>
+      <NavLink className="navbar-brand" to="/">
+        Home
+      </NavLink>
+      <NavLink className="navbar-brand" to="/post">
+        Post Event
+      </NavLink>
+      <NavLink className="navbar-brand" to="/events">
+        Events
+      </NavLink>
+      <NavLink className="navbar-brand" to="/login">
+        Login
+      </NavLink>
+      <NavLink className="navbar-brand" to="/register">
+        Register
+      </NavLink>
     </nav>
   );
 };

@@ -1,5 +1,6 @@
 .navbar{
   /* height: 7em !important; */
+  background-color: antiquewhite;
   display: flex !important;
   width: 73%!important;
   margin: 0 auto !important;

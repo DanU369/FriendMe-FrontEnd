@@ -1,21 +1,13 @@
-import { render } from "@testing-library/react";
-import React, {
-  useState,
-  useEffect,
-  containerRef,
-  useRef,
-  useContext,
-} from "react";
-import {axios} from "../axios/axios"
+import React, { useState, useEffect, useRef } from "react";
+import { axios } from "./axios/axios";
 
 const PostEvent = () => {
-const nameRef=useRef();
-const typeRef=useRef();
-const descriptionRef=useRef();
-const spotsRef=useRef();
+  const nameRef = useRef();
+  const typeRef = useRef();
+  const descriptionRef = useRef();
+  const spotsRef = useRef();
 
-useEffect(()=>{console.log('render')},[])
-
+  // useEffect(()=>{console.log('render')},[])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,17 +15,16 @@ useEffect(()=>{console.log('render')},[])
     console.log("data send");
   };
 
-  const postEvent= async ()=>{
-      const object ={
-          name: nameRef.current.value,
-          type: typeRef.current.value,
-          description: descriptionRef.current.value,
-          available_spots: spotsRef.current.value
-          
-
-      }
-      await axios.post("/event", object);
-  }
+  const postEvent = async () => {
+    const object = {
+      name: nameRef.current.value,
+      type: typeRef.current.value,
+      description: descriptionRef.current.value,
+      available_spots: spotsRef.current.value,
+    };
+    await axios.post("/event", object);
+    window.location.href = "http://localhost:3000/events";
+  };
   return (
     <div className="form" style={{ textAlign: "center" }}>
       <form onSubmit={handleSubmit}>
